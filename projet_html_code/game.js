@@ -5,7 +5,6 @@ const lesMains = document.querySelectorAll(".option-container");
 const step1 = document.querySelector(".step-1");
 const step2 = document.querySelector(".step-2");
 const playerPick = document.querySelector(".player-pick");
-const scoreValue = document.querySelector(".score-value");
 const playAgainButton = document.querySelector(".play-again-btn");
 const computerPick = document.querySelector(".computer-pick");
 const replaces = document.querySelectorAll(".replace");
@@ -20,7 +19,7 @@ const compPickReplace = document.querySelector(".computer-pick > .replace");
 const tabPfp=[scissors, rock, paper]
 const tab = [scissors2, rock2, paper2];
 const imgScissors = document.querySelector('.scissors > option > img ')
-    
+   const WinnerLooserText = document.querySelector('.annouce-winner-text') 
 
 
     function randomComputer(x) {
@@ -31,7 +30,8 @@ const imgScissors = document.querySelector('.scissors > option > img ')
 
 
 lesMains.forEach((main) => {
-
+    const scoreValue = document.querySelector(".score-value");
+    let resultat = 0;
 main.addEventListener('click', () => {
 
 y =randomComputer(3)
@@ -50,7 +50,7 @@ y =randomComputer(3)
     replaces[0].classList.add(classListDesMains)
     div1.append(img)
     
-
+           
     let replaceElement = tab[y]
     const div2 = document.createElement('DIV');
     div2.setAttribute('class','option')
@@ -63,15 +63,33 @@ y =randomComputer(3)
     replaces[1].classList.add(classListDesMainsComputer)
     div2.append(img2)
 
+  
+    if(classListDesMains == "rock" && classListDesMainsComputer == "scissors"){
+        WinnerLooserText.innerHTML='You win'
+        resultat++
+    }else if (classListDesMains == "scissors" && classListDesMainsComputer == "paper"){
+        WinnerLooserText.innerHTML='You win'
+        resultat++
+    }else if(classListDesMains == "paper" && classListDesMainsComputer == "rock"){
+        WinnerLooserText.innerHTML='You win'
+        resultat++
+    }else if  (classListDesMains == classListDesMainsComputer ){
+        WinnerLooserText.innerHTML='Equality'
+        
+    }else{
+        WinnerLooserText.innerHTML='You Loose'
+        resultat--
+    }
 })
+        scoreValue.textContent=resultat
 
 playAgainButton.addEventListener("click", () => {
         step1.classList.remove("step-1-minimize");
         step2.classList.remove("step-2-minimizer");
-     
+        
       });
 
     })
 
 
-//scoreValue.replaceChildren('1')
+

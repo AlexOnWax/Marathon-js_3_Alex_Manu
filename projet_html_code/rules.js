@@ -1,3 +1,5 @@
+let background_rules = document.querySelector('main')
+
 let btn_paper = document.querySelector('.rules-btn')
 let rules = document.querySelector('aside')
 
@@ -11,7 +13,6 @@ btn_paper.addEventListener('click', () => {
 })
 
 close_rules.addEventListener('click', () => {
-
     rules.style.zIndex="-1"
     rules.style.opacity="0"
 })

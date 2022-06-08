@@ -81,6 +81,7 @@ main {
   opacity: 0;
   transition: transform 350ms linear, opacity 350ms linear;
 }
+
 .step-1-minimize {
   transform: scale(0, 0);
   opacity: 0;
@@ -185,6 +186,7 @@ main {
   font-size: 2.3rem;
   text-align: center;
   font-weight: 700;
+ 
 }
 .play-again-btn, .rules-btn, .advanced {
   background-color: var(--white);
@@ -268,7 +270,7 @@ aside {
 .attribution a { 
   color: hsl(228, 45%, 44%); 
 }
-@media screen and (min-width: 550px) {
+/* @media screen and (min-width: 550px) {
   .score {
     padding-inline: calc(var(--spacer) * 2);
   }
@@ -319,3 +321,7 @@ aside {
     justify-self: flex-end;
   }
 }
+ */
+
+
+
